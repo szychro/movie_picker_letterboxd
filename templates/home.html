@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Letterboxd Watchlist Movie Generator</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+    </head>
+    <body>
+       <div class = 'container'>
+            <h1>Letterboxd Watchlist Movie Picker</h1>
+            <form method="POST">
+                <label for="username">Enter your Letterboxd username:</label>
+                <input type="text" name="username" placeholder="eg. krabeczek, timmy22" required>
+                <button type="submit">Pick a Film</button>
+            </form>
+        {% if name %}
+        <div class='film'>
+            <img src="{{poster}}"">
+            <p><strong>Genres:</strong> {{ genre | join(", ") }}</p>
+            <h2><a href="{{link}}" target="_blank">{{name}}</a></h2>
+        {% endif %}
+        </div> 
+        </div> 
+    </body>
+</html>
+
