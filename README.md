@@ -14,4 +14,3 @@
 
 - error message when the username/watchlist does not exist
 - deploy fastapi
-- teststes
