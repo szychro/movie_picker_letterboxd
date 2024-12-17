@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>Letterboxd Watchlist Movie Generator</title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+        <link href="{{ url_for('static', path='styles.css') }}" rel="stylesheet" type="text/css">
     </head>
     <body>
        <div class = 'container'>
@@ -11,11 +11,14 @@
                 <input type="text" name="username" placeholder="eg. krabeczek, timmy22" required>
                 <button type="submit">Pick a Film</button>
             </form>
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
         {% if name %}
         <div class='film'>
-            <img src="{{poster}}"">
+            <img src="{{ poster }}">
             <p><strong>Genres:</strong> {{ genre | join(", ") }}</p>
-            <h2><a href="{{link}}" target="_blank">{{name}}</a></h2>
+            <h2><a href="{{ link }}" target="_blank">{{name}}</a></h2>
         {% endif %}
         </div> 
         </div> 

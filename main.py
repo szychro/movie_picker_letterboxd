@@ -11,10 +11,9 @@ import uvicorn
 
 app = FastAPI()
 templates = Jinja2Templates(directory='templates')
-app.mount("/static", StaticFiles(directory ='static'), name='static')
-base_url = 'https://letterboxd.com'
+app.mount("/static", StaticFiles(directory='static'), name='static')
 
-#username =input()
+base_url = 'https://letterboxd.com'
 
 def get_watchlist(base_url,username):
     data=[]
@@ -46,14 +45,9 @@ def pick_film(base_url, watchlist):
         # Clean up JSON-LD string
         if raw_content:
             # Remove comments (/* ... */)
-            cleaned_content = re.sub(r'/\*.*?\*/', '', raw_content, flags=re.DOTALL)
-
-            
+            cleaned_content = re.sub(r'/\*.*?\*/', '', raw_content, flags=re.DOTALL)   
             json_data = json.loads(cleaned_content)
             return json_data['name'], json_data['genre'], json_data['image'], url
-
-#watchlist = get_watchlist(base_url, username)
-#name, genre, poster, link = pick_film(base_url, watchlist)
 
 @app.get('/', response_class=HTMLResponse)
 def get_basic_form(request: Request):
