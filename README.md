@@ -1,4 +1,4 @@
-<img src="https:[//github.com/favicon.ico](https://github.com/user-attachments/assets/43fb0dfc-2508-4f19-a209-3b02ed2c45ab)" width="25">
+<img src="https:[//github.com/favicon.ico](https://github.com/user-attachments/assets/43fb0dfc-2508-4f19-a209-3b02ed2c45ab" width=50% height=50%>
 
 ### Setup
 
